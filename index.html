@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hope of a New Life Ministry - Catholic Charity in Uganda</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #333;
+        }
+        .hero-bg {
+            /* Changed placeholder text for clarity, but you should replace this with your hero image URL */
+            background-image: url('https://placehold.co/1920x1080/0e998e/ffffff?text=Ministry+Photo');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .text-shadow-custom {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+        .btn-primary {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        .section-title {
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background-color: #0e998e;
+            border-radius: 9999px;
+        }
+        .donate-modal, .gallery-modal {
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <a href="#" class="flex items-center space-x-2">
+                <div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center font-bold text-white text-xl">H</div>
+                <span class="text-xl font-bold text-gray-800">Hope of a New Life Ministry</span>
+            </a>
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="#about" class="text-gray-600 hover:text-green-600 transition duration-300">About</a>
+                <a href="#mission" class="text-gray-600 hover:text-green-600 transition duration-300">Our Work</a>
+                <a href="#people" class="text-gray-600 hover:text-green-600 transition duration-300">Our People</a>
+                <a href="#gallery" class="text-gray-600 hover:text-green-600 transition duration-300">Gallery</a>
+                <a href="#get-involved" class="text-gray-600 hover:text-green-600 transition duration-300">Join Us</a>
+                <button id="donateBtnNav" class="bg-green-600 text-white px-6 py-2 rounded-full font-semibold hover:bg-green-700 transition duration-300 btn-primary">
+                    Donate
+                </button>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-btn" class="text-gray-500 hover:text-gray-700 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-4 6h4"></path></svg>
+                </button>
+            </div>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md p-4 space-y-2">
+            <a href="#about" class="block text-gray-600 hover:text-green-600 transition duration-300 py-2 border-b">About</a>
+            <a href="#mission" class="block text-gray-600 hover:text-green-600 transition duration-300 py-2 border-b">Our Work</a>
+            <a href="#people" class="block text-gray-600 hover:text-green-600 transition duration-300 py-2 border-b">Our People</a>
+            <a href="#gallery" class="block text-gray-600 hover:text-green-600 transition duration-300 py-2 border-b">Gallery</a>
+            <a href="#get-involved" class="block text-gray-600 hover:text-green-600 transition duration-300 py-2 border-b">Join Us</a>
+            <button id="donateBtnMobile" class="w-full bg-green-600 text-white px-4 py-2 rounded-full font-semibold hover:bg-green-700 transition duration-300">
+                Donate
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section (Image Only) -->
+    <section class="hero-bg h-[70vh]"></section>
+
+    <!-- Mission Statement Section (Now integrated and overlaps slightly) -->
+    <section class="bg-white relative z-10 -mt-20 pt-10 pb-12 shadow-xl">
+        <div class="container mx-auto px-4 text-center max-w-5xl">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-snug mb-4 text-gray-800">Bringing Hope and a New Life to Uganda’s Orphaned Children</h1>
+            <p class="text-xl sm:text-2xl text-gray-600 font-medium max-w-3xl mx-auto">Rooted in Catholic faith, we are dedicated to transforming the lives of vulnerable orphaned children through compassionate care and spiritual guidance.</p>
+        </div>
+    </section>
+
+    <!-- Call to Action Section (Stays the same, immediately follows) -->
+    <section class="bg-green-700 py-6 relative z-10 shadow-xl">
+        <div class="container mx-auto px-4 flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-8">
+            <button id="donateBtnHero" class="bg-white text-green-700 px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition duration-300 btn-primary shadow-lg text-lg">
+                Donate Now
+            </button>
+            <a href="#get-involved" class="border-2 border-white text-white px-8 py-3 rounded-full font-bold hover:bg-white hover:text-green-700 transition duration-300 btn-primary shadow-lg text-lg">
+                Join Us Today
+            </a>
+        </div>
+    </section>
+
+    <!-- About Us Section (Updated to bg-gray-100) -->
+    <section id="about" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold section-title mb-8 text-gray-800">About Our Ministry</h2>
+            <div class="max-w-4xl mx-auto text-lg text-gray-600">
+                <p class="mb-4">Hope of a New Life Ministry is a Catholic charity organization based in Uganda, dedicated to transforming the lives of orphaned children through compassionate care and spiritual guidance. Rooted in the teachings of the Catholic Church, our mission is to provide a nurturing environment where vulnerable children can thrive physically, emotionally, and spiritually.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Vision Section (Stays bg-white) -->
+    <section id="vision" class="py-16 bg-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold section-title mb-8 text-gray-800">Our Vision</h2>
+            <div class="max-w-4xl mx-auto text-lg text-gray-600">
+                <p>Hope of a New Life Ministry envisions a world where every orphaned child in Uganda has the opportunity to live with dignity, receive a holistic education, and grow in faith. By combining practical support with spiritual care, we aim to nurture the next generation of faithful, empowered individuals who can contribute to their communities.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Work & Impact Section (Updated to bg-gray-100) -->
+    <section id="mission" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center section-title mb-12 text-gray-800">Our Work</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Our Work Card 1: Food and Shelter -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 text-center">
+                    <div class="mb-4 flex justify-center">
+                        <img src="https://placehold.co/200x150/50c6a5/ffffff?text=Food+and+Shelter" alt="Food and Shelter" class="rounded-lg w-full h-auto object-cover aspect-video">
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Food and Shelter</h3>
+                    <p class="text-gray-600">We offer safe, loving homes and nutritious meals to ensure the well-being of orphaned children, giving them the stability they need to grow and flourish.</p>
+                </div>
+                <!-- Our Work Card 2: Educational Support -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 text-center">
+                    <div class="mb-4 flex justify-center">
+                        <img src="https://placehold.co/200x150/50c6a5/ffffff?text=Education" alt="Educational Support" class="rounded-lg w-full h-auto object-cover aspect-video">
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Educational Support</h3>
+                    <p class="text-gray-600">We provide access to quality education, including school supplies, uniforms, and tuition assistance, empowering children to build a brighter future.</p>
+                </div>
+                <!-- Our Work Card 3: Catechesis and Faith Formation -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 text-center">
+                    <div class="mb-4 flex justify-center">
+                        <img src="https://placehold.co/200x150/50c6a5/ffffff?text=Catechesis" alt="Catechesis and Faith Formation" class="rounded-lg w-full h-auto object-cover aspect-video">
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Catechesis and Faith Formation</h3>
+                    <p class="text-gray-600">Through regular instruction in the Catholic faith, we guide children in their spiritual journey, fostering a deep connection to God and the values of compassion, hope, and resilience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our People Section (Stays bg-white) -->
+    <section id="people" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center section-title mb-12 text-gray-800">Our People</h2>
+
+            <!-- 1. Director Section: Image beside Description (Updated card to bg-gray-100) -->
+            <div class="max-w-4xl mx-auto bg-gray-100 p-8 rounded-xl shadow-lg mb-12">
+                <div class="md:flex md:space-x-8 items-center">
+                    <!-- Director Image (Placeholder - Replace with URL) -->
+                    <div class="md:w-1/3 flex-shrink-0 mb-6 md:mb-0">
+                        <img src="https://placehold.co/300x400/0e998e/ffffff?text=Director+Image" alt="Image of the Founding Director" class="w-full h-auto object-cover rounded-xl shadow-md">
+                    </div>
+                    <!-- Director Description -->
+                    <div class="md:w-2/3">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Father John Bosco</h3>
+                        <p class="text-xl font-semibold text-green-600 mb-4">Founding Director</p>
+                        <p class="text-gray-600 leading-relaxed">Father John Bosco established Hope of a New Life Ministry in 2010 with a vision to provide a sanctuary for children orphaned by conflict and disease. His unwavering faith and commitment to Catholic social teaching drive our entire operation. He oversees all spiritual and strategic initiatives, ensuring every child receives both physical sustenance and guidance in faith. His leadership is the heart and soul of our ministry.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Core Team Section: 5 members in a row (Updated cards to bg-gray-100) -->
+            <div class="text-center mb-8">
+                <h3 class="text-2xl font-bold text-gray-800">Core Leadership Team</h3>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
+                <!-- Team Member 1 (Placeholder - Replace with URL) -->
+                <div class="text-center bg-gray-100 p-4 rounded-xl shadow-md">
+                    <img src="https://placehold.co/150x150/fde047/333333?text=Jane" alt="Team Member Jane Akello" class="w-24 h-24 rounded-full mx-auto object-cover mb-3 shadow-inner">
+                    <p class="font-semibold text-gray-800">Jane Akello</p>
+                    <p class="text-sm text-green-600">Program Coordinator</p>
+                </div>
+                <!-- Team Member 2 (Placeholder - Replace with URL) -->
+                <div class="text-center bg-gray-100 p-4 rounded-xl shadow-md">
+                    <img src="https://placehold.co/150x150/a3e635/333333?text=Simon" alt="Team Member Simon Peter" class="w-24 h-24 rounded-full mx-auto object-cover mb-3 shadow-inner">
+                    <p class="font-semibold text-gray-800">Simon Peter</p>
+                    <p class="text-sm text-green-600">Education Lead</p>
+                </div>
+                <!-- Team Member 3 (Placeholder - Replace with URL) -->
+                <div class="text-center bg-gray-100 p-4 rounded-xl shadow-md">
+                    <img src="https://placehold.co/150x150/93c5fd/333333?text=Martha" alt="Team Member Martha Grace" class="w-24 h-24 rounded-full mx-auto object-cover mb-3 shadow-inner">
+                    <p class="font-semibold text-gray-800">Martha Grace</p>
+                    <p class="text-sm text-green-600">Finance Manager</p>
+                </div>
+                <!-- Team Member 4 (Placeholder - Replace with URL) -->
+                <div class="text-center bg-gray-100 p-4 rounded-xl shadow-md">
+                    <img src="https://placehold.co/150x150/fbcfe8/333333?text=David" alt="Team Member David Mutebi" class="w-24 h-24 rounded-full mx-auto object-cover mb-3 shadow-inner">
+                    <p class="font-semibold text-gray-800">David Mutebi</p>
+                    <p class="text-sm text-green-600">Volunteer Coordinator</p>
+                </div>
+                <!-- Team Member 5 (Placeholder - Replace with URL) -->
+                <div class="text-center bg-gray-100 p-4 rounded-xl shadow-md">
+                    <img src="https://placehold.co/150x150/d8b4fe/333333?text=Esther" alt="Team Member Esther Wanjiru" class="w-24 h-24 rounded-full mx-auto object-cover mb-3 shadow-inner">
+                    <p class="font-semibold text-gray-800">Esther Wanjiru</p>
+                    <p class="text-sm text-green-600">Spiritual Counselor</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Gallery Section (Updated to bg-gray-100) -->
+    <section id="gallery" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center section-title mb-12 text-gray-800">Our Gallery</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <!-- Gallery items will be added here with user's images -->
+                <!-- Example placeholders -->
+                <div class="relative group cursor-pointer overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition duration-300">
+                    <img src="https://placehold.co/400x300/a3e635/ffffff?text=Image+1" alt="Gallery Image 1" class="w-full h-full object-cover aspect-[4/3] group-hover:scale-105 transition-transform duration-500 gallery-image">
+                </div>
+                <div class="relative group cursor-pointer overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition duration-300">
+                    <img src="https://placehold.co/400x300/fde047/333333?text=Image+2" alt="Gallery Image 2" class="w-full h-full object-cover aspect-[4/3] group-hover:scale-105 transition-transform duration-500 gallery-image">
+                </div>
+                <div class="relative group cursor-pointer overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition duration-300">
+                    <img src="https://placehold.co/400x300/93c5fd/333333?text=Image+3" alt="Gallery Image 3" class="w-full h-full object-cover aspect-[4/3] group-hover:scale-105 transition-transform duration-500 gallery-image">
+                </div>
+                <div class="relative group cursor-pointer overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition duration-300">
+                    <img src="https://placehold.co/400x300/c084fc/ffffff?text=Image+4" alt="Gallery Image 4" class="w-full h-full object-cover aspect-[4/3] group-hover:scale-105 transition-transform duration-500 gallery-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Get Involved Section (Stays bg-white) -->
+    <section id="get-involved" class="py-16 bg-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold section-title mb-8 text-gray-800">Join Us</h2>
+            <p class="max-w-3xl mx-auto text-lg text-gray-600 mb-12">Every hand makes a difference. Join us in bringing hope and a new life to Uganda’s orphaned children.</p>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Donate Card (Updated to bg-gray-100) -->
+                <div class="bg-gray-100 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 text-center">
+                    <div class="text-green-600 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8h.01M12 12h.01M12 16h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-2">Donate Today</h3>
+                    <p class="text-gray-600 mb-6">Your financial contribution directly funds our programs, from providing meals to supporting educational workshops.</p>
+                    <button id="donateBtnGetInvolved" class="bg-green-600 text-white px-8 py-3 rounded-full font-bold hover:bg-green-700 transition duration-300 btn-primary shadow-lg">
+                        Give Now
+                    </button>
+                </div>
+                <!-- Volunteer Card (Updated to bg-gray-100) -->
+                <div class="bg-gray-100 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 text-center">
+                    <div class="text-green-600 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM12 15a4 4 0 100-8 4 4 0 000 8z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-2">Become a Volunteer</h3>
+                    <p class="text-gray-600 mb-6">Lend a hand and be the change you wish to see. Our volunteers are the backbone of our organization.</p>
+                    <button class="bg-green-600 text-white px-8 py-3 rounded-full font-bold hover:bg-green-700 transition duration-300 btn-primary shadow-lg">
+                        Join Us
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4 grid md:grid-cols-3 gap-8 text-center md:text-left">
+            <!-- Footer Info -->
+            <div class="space-y-4">
+                <a href="#" class="flex justify-center md:justify-start items-center space-x-2 mb-2">
+                    <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center font-bold text-white text-lg">H</div>
+                    <span class="text-xl font-bold text-white">Hope of a New Life Ministry</span>
+                </a>
+                <p class="text-gray-400 text-sm">Empowering communities through compassionate care and spiritual guidance.</p>
+                <div class="flex justify-center md:justify-start space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879v-6.988h-2.54V12h2.54V9.797c0-2.505 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" /></svg>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.237 2.768 7.846 6.6 9.139.485.088.663-.207.663-.456v-1.583c-2.686.58-3.256-1.288-3.256-1.288-.44-.928-1.07-1.176-1.07-1.176-.87-.597.066-.585.066-.585.96.068 1.465.986 1.465.986.853 1.46 2.233 1.037 2.784.794.086-.618.334-1.037.608-1.275-2.12-.24-4.344-1.06-4.344-4.735 0-1.045.372-1.9.98-2.56-.1-.24-.425-1.21.09-2.52.8-.256 2.62.98 2.62.98.76-.21 1.58-.315 2.4-.319.82.004 1.64.109 2.4.319.006-.024 1.82-.99 2.62-.98.515 1.31.29 2.28-.09 2.52.61.66.98 1.515.98 2.56 0 3.682-2.224 4.495-4.344 4.735.344.298.665.885.665 1.78v2.645c0 .25.178.544.665.456C19.232 19.846 22 16.237 22 12c0-5.523-4.477-10-10-10z" /></svg>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M23.954 4.569a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.564-2.005.974-3.127 1.185a4.957 4.957 0 00-8.467 4.484 14.06 14.06 0 01-10.29-5.19A4.956 4.956 0 003.17 12.284c-.924-.131-1.79-.398-2.545-.705v.064a4.958 4.958 0 003.97 4.862 4.925 4.925 0 01-2.22.084 4.962 4.962 0 004.61 3.444 9.92 9.92 0 01-6.17 2.113 13.972 13.972 0 007.57 2.223c9.083 0 14.05-7.498 14.05-14.05 0-.214-.005-.426-.014-.636A10.038 10.038 0 0024 4.57z" /></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Footer Links -->
+            <div class="space-y-4">
+                <h4 class="text-lg font-semibold text-white mb-2">Quick Links</h4>
+                <ul class="space-y-2 text-gray-400 text-sm">
+                    <li><a href="#" class="hover:text-white transition duration-300">Home</a></li>
+                    <li><a href="#about" class="hover:text-white transition duration-300">About Us</a></li>
+                    <li><a href="#mission" class="hover:text-white transition duration-300">Our Work</a></li>
+                    <li><a href="#people" class="hover:text-white transition duration-300">Our People</a></li>
+                    <li><a href="#gallery" class="hover:text-white transition duration-300">Gallery</a></li>
+                    <li><a href="#get-involved" class="hover:text-white transition duration-300">Join Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="space-y-4">
+                <h4 class="text-lg font-semibold text-white mb-2">Contact Us</h4>
+                <div class="space-y-2 text-gray-400 text-sm">
+                    <p>123 Charity Lane, Hope City, 12345</p>
+                    <p>Email: info@hopeofnewlife.org</p>
+                    <p>Phone: (123) 456-7890</p>
+                </div>
+            </div>
+        </div>
+        <div class="container mx-auto px-4 text-center mt-8 border-t border-gray-700 pt-8 text-gray-500 text-sm">
+            <p>&copy; 2025 Hope of a New Life Ministry. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Donation Modal -->
+    <div id="donation-modal" class="donate-modal fixed inset-0 bg-gray-900 bg-opacity-75 hidden flex items-center justify-center p-4">
+        <div class="bg-white p-8 rounded-xl shadow-2xl max-w-lg w-full relative">
+            <button id="close-modal-btn" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 transition duration-300">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            <h3 class="text-2xl font-bold text-gray-800 text-center mb-6">Make a Donation</h3>
+            <p class="text-gray-600 text-center mb-6">Your generosity helps us continue our vital work and create real change.</p>
+            <form id="donation-form" class="space-y-6">
+                <div>
+                    <label for="amount" class="block text-gray-700 font-semibold mb-2">Donation Amount ($)</label>
+                    <div class="flex space-x-2">
+                        <button type="button" class="amount-btn flex-1 bg-gray-100 text-gray-800 px-4 py-2 rounded-lg hover:bg-green-100 transition duration-300 border-2 border-transparent focus:border-green-600 focus:outline-none">$25</button>
+                        <button type="button" class="amount-btn flex-1 bg-gray-100 text-gray-800 px-4 py-2 rounded-lg hover:bg-green-100 transition duration-300 border-2 border-transparent focus:border-green-600 focus:outline-none">$50</button>
+                        <button type="button" class="amount-btn flex-1 bg-gray-100 text-gray-800 px-4 py-2 rounded-lg hover:bg-green-100 transition duration-300 border-2 border-transparent focus:border-green-600 focus:outline-none">$100</button>
+                    </div>
+                    <div class="mt-4">
+                        <input type="number" id="custom-amount" name="custom-amount" placeholder="Enter custom amount" class="w-full border-2 border-gray-300 rounded-lg px-4 py-2 focus:border-green-600 focus:outline-none transition duration-300">
+                    </div>
+                </div>
+                <div>
+                    <label for="name" class="block text-gray-700 font-semibold mb-2">Full Name</label>
+                    <input type="text" id="name" name="name" required class="w-full border-2 border-gray-300 rounded-lg px-4 py-2 focus:border-green-600 focus:outline-none transition duration-300">
+                </div>
+                <div>
+                    <label for="email" class="block text-gray-700 font-semibold mb-2">Email Address</label>
+                    <input type="email" id="email" name="email" required class="w-full border-2 border-gray-300 rounded-lg px-4 py-2 focus:border-green-600 focus:outline-none transition duration-300">
+                </div>
+                <div id="donation-message" class="text-center font-semibold text-green-600 hidden"></div>
+                <button type="submit" class="w-full bg-green-600 text-white px-6 py-3 rounded-full font-bold hover:bg-green-700 transition duration-300 shadow-md">Donate & Make an Impact</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Gallery Modal -->
+    <div id="gallery-modal" class="gallery-modal fixed inset-0 bg-black bg-opacity-75 hidden flex items-center justify-center p-4">
+        <div class="relative max-w-5xl max-h-[90vh] mx-auto flex items-center justify-center">
+            <button id="close-gallery-btn" class="absolute top-4 right-4 text-white text-3xl hover:text-gray-300 z-20">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            <img id="modal-image" src="" alt="Full-screen gallery image" class="rounded-xl max-w-full max-h-full">
+        </div>
+    </div>
+
+    <!-- JavaScript for Mobile Menu, Donation Modal, and Gallery -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const donateBtns = document.querySelectorAll('#donateBtnNav, #donateBtnMobile, #donateBtnHero, #donateBtnGetInvolved'); 
+            const donationModal = document.getElementById('donation-modal');
+            const closeModalBtn = document.getElementById('close-modal-btn');
+            const donationForm = document.getElementById('donation-form');
+            const donationMessage = document.getElementById('donation-message');
+            const amountBtns = document.querySelectorAll('.amount-btn');
+            const customAmountInput = document.getElementById('custom-amount');
+
+            const galleryModal = document.getElementById('gallery-modal');
+            const modalImage = document.getElementById('modal-image');
+            const closeGalleryBtn = document.getElementById('close-gallery-btn');
+            const galleryImages = document.querySelectorAll('.gallery-image');
+            
+
+            // Toggle mobile menu
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Open the donation modal
+            donateBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    donationModal.classList.remove('hidden');
+                });
+            });
+
+            // Close the donation modal
+            closeModalBtn.addEventListener('click', () => {
+                donationModal.classList.add('hidden');
+                donationMessage.classList.add('hidden');
+                donationForm.reset();
+            });
+
+            // Close modal when clicking outside of it
+            window.addEventListener('click', (event) => {
+                if (event.target === donationModal) {
+                    donationModal.classList.add('hidden');
+                    donationMessage.classList.add('hidden');
+                    donationForm.reset();
+                }
+            });
+
+            // Handle donation form submission
+            donationForm.addEventListener('submit', (event) => {
+                event.preventDefault();
+                const selectedAmountBtn = document.querySelector('.amount-btn.bg-green-600');
+                let amount;
+                if (customAmountInput.value) {
+                    amount = customAmountInput.value;
+                } else if (selectedAmountBtn) {
+                    amount = selectedAmountBtn.textContent.replace('$', '');
+                } else {
+                    amount = 'a generous amount';
+                }
+
+                const name = document.getElementById('name').value;
+                donationMessage.textContent = `Thank you, ${name}! Your donation of $${amount} has been received. Your support makes a huge difference!`;
+                donationMessage.classList.remove('hidden');
+                
+                // Simulate successful payment/submission
+                setTimeout(() => {
+                    donationModal.classList.add('hidden');
+                    donationForm.reset();
+                    donationMessage.classList.add('hidden');
+                    amountBtns.forEach(btn => {
+                        btn.classList.remove('bg-green-600', 'text-white', 'border-green-600');
+                        btn.classList.add('bg-gray-100', 'text-gray-800', 'border-transparent');
+                    });
+                }, 4000);
+            });
+
+            // Handle amount button clicks
+            amountBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    amountBtns.forEach(b => {
+                        b.classList.remove('bg-green-600', 'text-white', 'border-green-600');
+                        b.classList.add('bg-gray-100', 'text-gray-800', 'border-transparent');
+                    });
+                    btn.classList.remove('bg-gray-100', 'text-gray-800', 'border-transparent');
+                    btn.classList.add('bg-green-600', 'text-white', 'border-green-600');
+                    customAmountInput.value = ''; // Clear custom input when a preset button is clicked
+                });
+            });
+
+            // Clear button selection if custom amount is typed
+            customAmountInput.addEventListener('input', () => {
+                amountBtns.forEach(btn => {
+                    btn.classList.remove('bg-green-600', 'text-white', 'border-green-600');
+                    btn.classList.add('bg-gray-100', 'text-gray-800', 'border-transparent');
+                });
+            });
+
+            // Open gallery modal
+            galleryImages.forEach(image => {
+                image.addEventListener('click', () => {
+                    modalImage.src = image.src;
+                    galleryModal.classList.remove('hidden');
+                });
+            });
+
+            // Close gallery modal
+            closeGalleryBtn.addEventListener('click', () => {
+                galleryModal.classList.add('hidden');
+            });
+
+            // Close gallery modal on outside click
+            window.addEventListener('click', (event) => {
+                if (event.target === galleryModal) {
+                    galleryModal.classList.add('hidden');
+                }
+            });
+            
+        });
+    </script>
+
+</body>
+</html>
