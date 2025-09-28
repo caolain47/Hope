@@ -443,124 +443,218 @@
     </div>
 
     <!-- JavaScript for Mobile Menu, Donation Modal, and Gallery -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const donateBtns = document.querySelectorAll('#donateBtnNav, #donateBtnMobile, #donateBtnHero, #donateBtnGetInvolved'); 
-            const donationModal = document.getElementById('donation-modal');
-            const closeModalBtn = document.getElementById('close-modal-btn');
-            const donationForm = document.getElementById('donation-form');
-            const donationMessage = document.getElementById('donation-message');
-            const amountBtns = document.querySelectorAll('.amount-btn');
-            const customAmountInput = document.getElementById('custom-amount');
-
-            const galleryModal = document.getElementById('gallery-modal');
-            const modalImage = document.getElementById('modal-image');
-            const closeGalleryBtn = document.getElementById('close-gallery-btn');
-            const galleryImages = document.querySelectorAll('.gallery-image');
+    document.addEventListener('DOMContentLoaded', () => {
+        // Existing element selectors (Donation, Mobile Menu, etc.)
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const donateBtns = document.querySelectorAll('#donateBtnNav, #donateBtnMobile, #donateBtnHero, #donateBtnGetInvolved'); 
+        const donationModal = document.getElementById('donation-modal');
+        const closeModalBtn = document.getElementById('close-modal-btn');
+        const donationForm = document.getElementById('donation-form');
+        const donationMessage = document.getElementById('donation-message');
+        const mediaCards = document.querySelectorAll('.media-card'); // Our work cards
+    
+        // New Carousel Element Selectors
+        const mediaCarouselModal = document.getElementById('media-carousel-modal');
+        const closeCarouselBtn = document.getElementById('close-carousel-btn');
+        const carouselModalTitle = document.getElementById('carousel-modal-title');
+        const photoTab = document.getElementById('photo-tab');
+        const videoTab = document.getElementById('video-tab');
+        const mediaContainer = document.getElementById('media-container');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const assetCounter = document.getElementById('asset-counter');
+    
+        // --- Media Data Configuration ---
+        // NOTE: These paths assume you have folders named 'cathec', 'food', and 'education' 
+        // containing the respective image (.jpg) and video (.mp4) files.
+        const mediaData = {
+            "Catechesis and Faith Formation": {
+                images: ['cathec/i1.jpg'],
+                videos: ['cathec/v1.mp4', 'cathec/v2.mp4', 'cathec/v3.mp4', 'cathec/v4.mp4', 'cathec/v5.mp4', 'cathec/v6.mp4', 'cathec/v7.mp4', 'cathec/v8.mp4']
+            },
+            "Food and Shelter": {
+                images: ['food/i1.jpg', 'food/i2.jpg', 'food/i3.jpg', 'food/i4.jpg'],
+                videos: ['food/v1.mp4', 'food/v2.mp4', 'food/v3.mp4', 'food/v4.mp4', 'food/v5.mp4', 'food/v6.mp4', 'food/v7.mp4', 'food/v8.mp4', 'food/v9.mp4']
+            },
+            "Educational Support": {
+                images: ['education/i1.jpg', 'education/i2.jpg', 'education/i3.jpg', 'education/i4.jpg', 'education/i5.jpg'],
+                videos: [] // No videos provided for this section
+            }
+        };
+        
+        // --- Carousel State Management ---
+        let currentCategory = '';
+        let currentMediaType = 'images';
+        let currentAssetIndex = 0;
+        let currentAssets = [];
+    
+        // --- Core Carousel Functions ---
+    
+        const getAssets = (category, type) => {
+            return mediaData[category] ? mediaData[category][type] : [];
+        };
+    
+        const updateControls = () => {
+            const total = currentAssets.length;
             
-
-            // Toggle mobile menu
-            mobileMenuBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
-
-            // Open the donation modal
-            donateBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    donationModal.classList.remove('hidden');
-                });
-            });
-
-            // Close the donation modal
-            closeModalBtn.addEventListener('click', () => {
-                donationModal.classList.add('hidden');
-                donationMessage.classList.add('hidden');
-                donationForm.reset();
-            });
-
-            // Close modal when clicking outside of it
-            window.addEventListener('click', (event) => {
-                if (event.target === donationModal) {
-                    donationModal.classList.add('hidden');
-                    donationMessage.classList.add('hidden');
-                    donationForm.reset();
-                }
-            });
-
-            // Handle donation form submission
-            donationForm.addEventListener('submit', (event) => {
-                event.preventDefault();
-                const selectedAmountBtn = document.querySelector('.amount-btn.bg-green-600');
-                let amount;
-                if (customAmountInput.value) {
-                    amount = customAmountInput.value;
-                } else if (selectedAmountBtn) {
-                    amount = selectedAmountBtn.textContent.replace('$', '');
-                } else {
-                    amount = 'a generous amount';
-                }
-
-                const name = document.getElementById('name').value;
-                donationMessage.textContent = `Thank you, ${name}! Your donation of $${amount} has been received. Your support makes a huge difference!`;
-                donationMessage.classList.remove('hidden');
-                
-                // Simulate successful payment/submission
-                setTimeout(() => {
-                    donationModal.classList.add('hidden');
-                    donationForm.reset();
-                    donationMessage.classList.add('hidden');
-                    amountBtns.forEach(btn => {
-                        btn.classList.remove('bg-green-600', 'text-white', 'border-green-600');
-                        btn.classList.add('bg-gray-100', 'text-gray-800', 'border-transparent');
-                    });
-                }, 4000);
-            });
-
-            // Handle amount button clicks
-            amountBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    amountBtns.forEach(b => {
-                        b.classList.remove('bg-green-600', 'text-white', 'border-green-600');
-                        b.classList.add('bg-gray-100', 'text-gray-800', 'border-transparent');
-                    });
-                    btn.classList.remove('bg-gray-100', 'text-gray-800', 'border-transparent');
-                    btn.classList.add('bg-green-600', 'text-white', 'border-green-600');
-                    customAmountInput.value = ''; // Clear custom input when a preset button is clicked
-                });
-            });
-
-            // Clear button selection if custom amount is typed
-            customAmountInput.addEventListener('input', () => {
-                amountBtns.forEach(btn => {
-                    btn.classList.remove('bg-green-600', 'text-white', 'border-green-600');
-                    btn.classList.add('bg-gray-100', 'text-gray-800', 'border-transparent');
-                });
-            });
-
-            // Open gallery modal
-            galleryImages.forEach(image => {
-                image.addEventListener('click', () => {
-                    modalImage.src = image.src;
-                    galleryModal.classList.remove('hidden');
-                });
-            });
-
-            // Close gallery modal
-            closeGalleryBtn.addEventListener('click', () => {
-                galleryModal.classList.add('hidden');
-            });
-
-            // Close gallery modal on outside click
-            window.addEventListener('click', (event) => {
-                if (event.target === galleryModal) {
-                    galleryModal.classList.add('hidden');
-                }
-            });
+            // Update Asset Counter
+            if (total === 0) {
+                assetCounter.textContent = 'No media available.';
+            } else {
+                assetCounter.textContent = `${currentAssetIndex + 1} of ${total}`;
+            }
+    
+            // Update Navigation Buttons (disabled state)
+            prevBtn.disabled = currentAssetIndex === 0 || total === 0;
+            nextBtn.disabled = currentAssetIndex === total - 1 || total === 0;
+    
+            // Update Tab Colors
+            photoTab.classList.remove('border-green-600', 'text-green-600');
+            videoTab.classList.remove('border-green-600', 'text-green-600');
+            photoTab.classList.add('border-transparent', 'text-gray-500');
+            videoTab.classList.add('border-transparent', 'text-gray-500');
+    
+            if (currentMediaType === 'images') {
+                photoTab.classList.add('border-green-600', 'text-green-600');
+                photoTab.classList.remove('border-transparent', 'text-gray-500');
+            } else {
+                videoTab.classList.add('border-green-600', 'text-green-600');
+                videoTab.classList.remove('border-transparent', 'text-gray-500');
+            }
+    
+            // Update Video Tab Availability
+            const hasVideos = getAssets(currentCategory, 'videos').length > 0;
+            videoTab.disabled = !hasVideos;
+            videoTab.classList.toggle('opacity-50', !hasVideos);
+            videoTab.classList.toggle('cursor-not-allowed', !hasVideos);
+        };
+    
+        const showAsset = () => {
+            mediaContainer.innerHTML = '';
+            if (currentAssets.length === 0) {
+                mediaContainer.innerHTML = '<p class="text-xl text-gray-500">No media available for this section yet.</p>';
+                updateControls();
+                return;
+            }
+    
+            const assetPath = currentAssets[currentAssetIndex];
             
+            if (assetPath.toLowerCase().endsWith('.mp4')) {
+                // Create Video Element
+                const videoEl = document.createElement('video');
+                videoEl.src = assetPath;
+                videoEl.controls = true;
+                videoEl.autoplay = true;
+                videoEl.loop = true;
+                videoEl.classList.add('w-full', 'h-full', 'object-contain', 'rounded-lg', 'shadow-xl');
+                mediaContainer.appendChild(videoEl);
+            } else {
+                // Create Image Element
+                const imgEl = document.createElement('img');
+                imgEl.src = assetPath;
+                imgEl.alt = `${currentCategory} Media ${currentAssetIndex + 1}`;
+                imgEl.classList.add('max-w-full', 'max-h-full', 'object-contain', 'rounded-lg', 'shadow-xl');
+                imgEl.onerror = function() {
+                    this.src = 'https://placehold.co/800x600/cccccc/333333?text=Media+Not+Found';
+                };
+                mediaContainer.appendChild(imgEl);
+            }
+            updateControls();
+        };
+    
+        const loadCarousel = (category, type) => {
+            currentCategory = category;
+            currentMediaType = type;
+            currentAssets = getAssets(category, type);
+            currentAssetIndex = 0;
+            carouselModalTitle.textContent = `Media for ${category}`;
+            mediaCarouselModal.classList.remove('hidden');
+            showAsset();
+        };
+    
+        const navigate = (direction) => {
+            if (currentAssets.length === 0) return;
+    
+            const newIndex = currentAssetIndex + direction;
+            if (newIndex >= 0 && newIndex < currentAssets.length) {
+                currentAssetIndex = newIndex;
+                showAsset();
+            }
+        };
+        
+        // --- Event Listeners ---
+    
+        // 1. Handle "Our Work" Card Clicks (Connects the HTML cards to the JS logic)
+        mediaCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const categoryName = card.dataset.category;
+                // Always start by defaulting to images
+                loadCarousel(categoryName, 'images'); 
+            });
         });
-    </script>
-
-</body>
+    
+        // 2. Handle Carousel Navigation
+        prevBtn.addEventListener('click', () => navigate(-1));
+        nextBtn.addEventListener('click', () => navigate(1));
+    
+        // 3. Handle Tab Switching
+        const handleTabClick = (event) => {
+            const newType = event.currentTarget.dataset.type;
+            if (newType === 'videos' && event.currentTarget.disabled) return;
+            
+            if (newType !== currentMediaType) {
+                loadCarousel(currentCategory, newType);
+            }
+        };
+    
+        photoTab.addEventListener('click', handleTabClick);
+        videoTab.addEventListener('click', handleTabClick);
+    
+        // 4. Handle Modal Closing
+        closeCarouselBtn.addEventListener('click', () => {
+            // Stop any playing video before closing
+            const video = mediaContainer.querySelector('video');
+            if (video) video.pause();
+            mediaCarouselModal.classList.add('hidden');
+        });
+    
+        window.addEventListener('click', (event) => {
+            if (event.target === mediaCarouselModal) {
+                const video = mediaContainer.querySelector('video');
+                if (video) video.pause();
+                mediaCarouselModal.classList.add('hidden');
+            }
+        });
+    
+        // 5. Existing: Mobile Menu Toggle
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    
+        // 6. Existing: Donation Modal Logic
+        donateBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                donationModal.classList.remove('hidden');
+            });
+        });
+    
+        closeModalBtn.addEventListener('click', () => {
+            donationModal.classList.add('hidden');
+        });
+    
+        donationForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            donationMessage.textContent = `Thank you! Your donation has been received.`;
+            donationMessage.classList.remove('hidden');
+            setTimeout(() => {
+                donationModal.classList.add('hidden');
+                donationForm.reset();
+                donationMessage.classList.add('hidden');
+            }, 4000);
+        });
+    
+    });
+    
+    </body>
 </html>
