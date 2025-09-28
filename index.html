@@ -12,11 +12,9 @@
             color: #333;
         }
         .hero-bg {
-            background-image: url('images/cover1.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
+            background: none; /* Remove the background-image */
         }
+
 
         .text-shadow-custom {
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
@@ -87,7 +85,10 @@
     </header>
 
     <!-- Hero Section (Image Only) -->
-    <section class="hero-bg h-[90vh]"></section>
+    <section class="hero-bg">
+        <img src="images/cover1.jpg" alt="Ministry Cover" class="w-full h-auto">
+    </section>
+
 
     <!-- Mission Statement Section (Now integrated and overlaps slightly) -->
     <section class="bg-white relative z-10 -mt-20 pt-10 pb-12 shadow-xl">
