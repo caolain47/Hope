@@ -52,7 +52,7 @@
     <header class="bg-white shadow-sm sticky top-0 z-50">
         <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
             <a href="#" class="flex items-center space-x-2">
-                <div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center font-bold text-white text-xl">H</div>
+                <img src="images/hope.jpg" alt="Hope of a New Life Ministry Logo" class="w-10 h-10 rounded-full object-cover">
                 <span class="text-xl font-bold text-gray-800">Hope of a New Life Ministry</span>
             </a>
             <div class="hidden md:flex space-x-6 items-center">
@@ -181,7 +181,7 @@
 
             <div class="group bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 text-center cursor-pointer media-card" data-category="Educational Support">
                 <div class="mb-4 relative overflow-hidden rounded-lg">
-                     <img src="images/children2.jpg" 
+                    <img src="images/children2.jpg" 
                          onerror="this.onerror=null;this.src='https://placehold.co/400x300/50c6a5/ffffff?text=Educational+Support';" 
                          alt="Educational Support" 
                          class="w-full h-64 object-cover transition-transform duration-500">
@@ -195,7 +195,7 @@
 
             <div class="group bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 text-center cursor-pointer media-card" data-category="Catechesis and Faith Formation">
                 <div class="mb-4 relative overflow-hidden rounded-lg">
-                     <img src="images/cathec10.jpg" 
+                    <img src="images/cathec10.jpg" 
                          onerror="this.onerror=null;this.src='https://placehold.co/400x300/50c6a5/ffffff?text=Catechesis';" 
                          alt="Catechesis and Faith Formation" 
                          class="w-full h-64 object-cover transition-transform duration-500">
@@ -274,18 +274,10 @@
     <section id="gallery" class="py-16 bg-gray-100">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold text-center section-title mb-12 text-gray-800">Our Gallery</h2>
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                <div class="relative group cursor-pointer overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition duration-300">
-                    <img src="https://placehold.co/400x300/a3e635/ffffff?text=Image+1" alt="Gallery Image 1" class="w-full h-full object-cover aspect-[4/3] group-hover:scale-105 transition-transform duration-500 gallery-image">
-                </div>
-                <div class="relative group cursor-pointer overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition duration-300">
-                    <img src="https://placehold.co/400x300/fde047/333333?text=Image+2" alt="Gallery Image 2" class="w-full h-full object-cover aspect-[4/3] group-hover:scale-105 transition-transform duration-500 gallery-image">
-                </div>
-                <div class="relative group cursor-pointer overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition duration-300">
-                    <img src="https://placehold.co/400x300/93c5fd/333333?text=Image+3" alt="Gallery Image 3" class="w-full h-full object-cover aspect-[4/3] group-hover:scale-105 transition-transform duration-500 gallery-image">
-                </div>
-                <div class="relative group cursor-pointer overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition duration-300">
-                    <img src="https://placehold.co/400x300/c084fc/ffffff?text=Image+4" alt="Gallery Image 4" class="w-full h-full object-cover aspect-[4/3] group-hover:scale-105 transition-transform duration-500 gallery-image">
+            <div id="open-gallery-btn" class="relative group cursor-pointer max-w-4xl mx-auto rounded-xl shadow-lg hover:shadow-2xl transition duration-300 overflow-hidden">
+                <img src="donate/i1.jpg" alt="Gallery Preview" class="w-full h-80 object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-60 transition-all duration-300 flex items-center justify-center">
+                    <h3 class="text-white text-4xl font-bold text-shadow-custom">View Our Gallery</h3>
                 </div>
             </div>
         </div>
@@ -328,24 +320,35 @@
         <div class="container mx-auto px-4 grid md:grid-cols-3 gap-8 text-center md:text-left">
             <div class="space-y-4">
                 <a href="#" class="flex justify-center md:justify-start items-center space-x-2 mb-2">
-                    <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center font-bold text-white text-lg">H</div>
+                    <img src="images/hope.jpg" alt="Hope of a New Life Ministry Logo" class="w-8 h-8 rounded-full object-cover">
                     <span class="text-xl font-bold text-white">Hope of a New Life Ministry</span>
                 </a>
-                <p class="text-gray-400 text-sm">Dedicated to transforming the lives of vulnerable orphaned children through compassionate care and spiritual guidance.</p>
+                <p class="text-gray-400 text-sm">Empowering communities through compassionate care and spiritual guidance.</p>
+                <h4 class="text-lg font-semibold text-white mb-2 pt-2">Contact Us</h4>
+                <div class="flex justify-center md:justify-start space-x-4">
+                    <a href="https://www.instagram.com/hopeofanewlife?utm_source=qr&igsh=YW8zamIzNXg0aDlm" target="_blank" class="text-gray-400 hover:text-white transition duration-300" aria-label="Instagram">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M7.75 2h8.5C19.55 2 22 4.45 22 7.75v8.5c0 3.3-2.45 5.75-5.75 5.75h-8.5C4.45 22 2 19.55 2 16.25v-8.5C2 4.45 4.45 2 7.75 2zm0 2C5.68 4 4 5.68 4 7.75v8.5C4 18.32 5.68 20 7.75 20h8.5c2.07 0 3.75-1.68 3.75-3.75v-8.5C20 5.68 18.32 4 16.25 4h-8.5zm4.25 3a5.25 5.25 0 110 10.5A5.25 5.25 0 0112 7zm0 2a3.25 3.25 0 100 6.5A3.25 3.25 0 0012 9zm5.5.25a1 1 0 110 2 1 1 0 010-2z"/>
+                      </svg>
+                    </a>
+                    <a href="https://wa.me/256760260017" target="_blank" class="text-gray-400 hover:text-white transition duration-300" aria-label="WhatsApp">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M16.7 13.1c-.2-.1-1.1-.6-1.3-.7-.2-.1-.4-.1-.5.1-.2.2-.5.7-.7.8-.1.2-.3.2-.5.1-.2-.1-.8-.3-1.5-.9-.5-.4-.9-1-1-1.2-.1-.2 0-.4.1-.5.1-.1.3-.4.4-.6.1-.1.1-.2.2-.4s0-.3-.1-.5c-.1-.1-.5-1.2-.7-1.6-.2-.5-.4-.4-.6-.4-.1 0-.3 0-.5 0-.2 0-.5.1-.7.4-.2.2-.8.7-.8 1.7 0 1 .7 2 1.3 2.7 1.6 1.6 3.2 2.1 4.4 2.1.5 0 .9-.1 1.2-.2.4-.2 1.1-.5 1.3-.9.2-.4.2-.9.1-1-.1-.1-.2-.2-.4-.3zM12 2C6.5 2 2 6.5 2 12c0 1.6.4 3.2 1.2 4.6L2 22l5.5-1.4C9.3 21 10.7 21.3 12 21.3c5.5 0 10-4.5 10-9.9C22 6.5 17.5 2 12 2z"/>
+                      </svg>
+                    </a>
+                </div>
             </div>
 
-            <h4 class="text-lg font-semibold text-white mb-2 pt-2">Contact Us</h4>
-            <div class="flex justify-center md:justify-start space-x-4">
-            <a href="https://www.instagram.com/hopeofanewlife?utm_source=qr&igsh=YW8zamIzNXg0aDlm" target="_blank" class="text-gray-400 hover:text-white transition duration-300" aria-label="Instagram">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M7.75 2h8.5C19.55 2 22 4.45 22 7.75v8.5c0 3.3-2.45 5.75-5.75 5.75h-8.5C4.45 22 2 19.55 2 16.25v-8.5C2 4.45 4.45 2 7.75 2zm0 2C5.68 4 4 5.68 4 7.75v8.5C4 18.32 5.68 20 7.75 20h8.5c2.07 0 3.75-1.68 3.75-3.75v-8.5C20 5.68 18.32 4 16.25 4h-8.5zm4.25 3a5.25 5.25 0 110 10.5A5.25 5.25 0 0112 7zm0 2a3.25 3.25 0 100 6.5A3.25 3.25 0 0012 9zm5.5.25a1 1 0 110 2 1 1 0 010-2z"/>
-                  </svg>
-                </a>
-                <a href="https://wa.me/256760260017" target="_blank" class="text-gray-400 hover:text-white transition duration-300" aria-label="WhatsApp">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M16.7 13.1c-.2-.1-1.1-.6-1.3-.7-.2-.1-.4-.1-.5.1-.2.2-.5.7-.7.8-.1.2-.3.2-.5.1-.2-.1-.8-.3-1.5-.9-.5-.4-.9-1-1-1.2-.1-.2 0-.4.1-.5.1-.1.3-.4.4-.6.1-.1.1-.2.2-.4s0-.3-.1-.5c-.1-.1-.5-1.2-.7-1.6-.2-.5-.4-.4-.6-.4-.1 0-.3 0-.5 0-.2 0-.5.1-.7.4-.2.2-.8.7-.8 1.7 0 1 .7 2 1.3 2.7 1.6 1.6 3.2 2.1 4.4 2.1.5 0 .9-.1 1.2-.2.4-.2 1.1-.5 1.3-.9.2-.4.2-.9.1-1-.1-.1-.2-.2-.4-.3zM12 2C6.5 2 2 6.5 2 12c0 1.6.4 3.2 1.2 4.6L2 22l5.5-1.4C9.3 21 10.7 21.3 12 21.3c5.5 0 10-4.5 10-9.9C22 6.5 17.5 2 12 2z"/>
-                  </svg>
-                </a>
+            <div class="space-y-4">
+                <h4 class="text-lg font-semibold text-white mb-2">Quick Links</h4>
+                <ul class="space-y-2 text-gray-400 text-sm">
+                    <li><a href="#" class="hover:text-white transition duration-300">Home</a></li>
+                    <li><a href="#about" class="hover:text-white transition duration-300">About Us</a></li>
+                    <li><a href="#mission" class="hover:text-white transition duration-300">Our Work</a></li>
+                    <li><a href="#people" class="hover:text-white transition duration-300">Our People</a></li>
+                    <li><a href="#gallery" class="hover:text-white transition duration-300">Gallery</a></li>
+                    <li><a href="#get-involved" class="hover:text-white transition duration-300">Join Us</a></li>
+                </ul>
             </div>
 
             <div class="space-y-4">
@@ -397,15 +400,6 @@
                 <div id="donation-message" class="text-center font-semibold text-green-600 hidden"></div>
                 <button type="submit" class="w-full bg-green-600 text-white px-6 py-3 rounded-full font-bold hover:bg-green-700 transition duration-300 shadow-md">Donate & Make an Impact</button>
             </form>
-        </div>
-    </div>
-
-    <div id="gallery-modal" class="gallery-modal fixed inset-0 bg-black bg-opacity-75 hidden flex items-center justify-center p-4">
-        <div class="relative max-w-5xl max-h-[90vh] mx-auto flex items-center justify-center">
-            <button id="close-gallery-btn" class="absolute top-4 right-4 text-white text-3xl hover:text-gray-300 z-20">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-            </button>
-            <img id="modal-image" src="" alt="Full-screen gallery image" class="rounded-xl max-w-full max-h-full">
         </div>
     </div>
    
@@ -463,7 +457,6 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Existing element selectors (Donation, Mobile Menu, etc.)
             const mobileMenuBtn = document.getElementById('mobile-menu-btn');
             const mobileMenu = document.getElementById('mobile-menu');
             const donateBtns = document.querySelectorAll('#donateBtnNav, #donateBtnMobile, #donateBtnHero, #donateBtnGetInvolved'); 
@@ -471,9 +464,8 @@
             const closeModalBtn = document.getElementById('close-modal-btn');
             const donationForm = document.getElementById('donation-form');
             const donationMessage = document.getElementById('donation-message');
-            const mediaCards = document.querySelectorAll('.media-card'); // Our work cards
+            const mediaCards = document.querySelectorAll('.media-card');
    
-            // New Carousel Element Selectors
             const mediaCarouselModal = document.getElementById('media-carousel-modal');
             const closeCarouselBtn = document.getElementById('close-carousel-btn');
             const carouselModalTitle = document.getElementById('carousel-modal-title');
@@ -484,13 +476,29 @@
             const nextBtn = document.getElementById('next-btn');
             const assetCounter = document.getElementById('asset-counter');
 
-            // CHANGE 5: New "Join Us" Modal Selectors
             const joinUsBtn = document.getElementById('join-us-btn');
             const joinUsModal = document.getElementById('join-us-modal');
             const closeJoinUsModalBtn = document.getElementById('close-join-us-modal-btn');
+
+            // GALLERY CHANGE: Added a selector for the new gallery button
+            const openGalleryBtn = document.getElementById('open-gallery-btn');
            
             // --- Media Data Configuration ---
             const mediaData = {
+                // GALLERY CHANGE: Added "Main Gallery" with all new media
+                "Main Gallery": {
+                    images: [
+                        'donate/i1.jpg', 'donate/i2.jpg', 'donate/i3.jpg', 'donate/i4.jpg', 
+                        'donate/i15.jpg', 'donate/i6.jpg', 'donate/i7.jpg', 'donate/i8.jpg', 
+                        'donate/i9.jpg', 'activities/i1.jpg', 'activities/i2.jpg', 'activities/i3.jpg'
+                    ],
+                    videos: [
+                        'donate/v0.mp4', 'donate/v1.mp4', 'donate/v2.mp4', 'donate/v3.mp4',
+                        'donate/v4.mp4', 'donate/v5.mp4', 'donate/v6.mp4', 'donate/v7.mp4',
+                        'donate/v8.mp4', 'donate/v9.mp4', 'activities/v1.mp4', 'activities/v2.mp4',
+                        'activities/v3.mp4'
+                    ]
+                },
                 "Catechesis and Faith Formation": {
                     images: ['cathec/i1.jpg'],
                     videos: ['cathec/v1.mp4', 'cathec/v2.mp4', 'cathec/v3.mp4', 'cathec/v4.mp4', 'cathec/v5.mp4', 'cathec/v6.mp4', 'cathec/v7.mp4', 'cathec/v8.mp4']
@@ -505,13 +513,10 @@
                 }
             };
            
-            // --- Carousel State Management ---
             let currentCategory = '';
             let currentMediaType = 'images';
             let currentAssetIndex = 0;
             let currentAssets = [];
-           
-            // --- Core Carousel Functions ---
            
             const getAssets = (category, type) => {
                 return mediaData[category] ? mediaData[category][type] : [];
@@ -519,33 +524,17 @@
            
             const updateControls = () => {
                 const total = currentAssets.length;
-               
-                // Update Asset Counter
                 if (total === 0) {
                     assetCounter.textContent = 'No media available.';
                 } else {
                     assetCounter.textContent = `${currentAssetIndex + 1} of ${total}`;
                 }
-   
-                // Update Navigation Buttons (disabled state)
                 prevBtn.disabled = currentAssetIndex === 0 || total === 0;
                 nextBtn.disabled = currentAssetIndex === total - 1 || total === 0;
-   
-                // Update Tab Colors
-                photoTab.classList.remove('border-green-600', 'text-green-600');
-                videoTab.classList.remove('border-green-600', 'text-green-600');
-                photoTab.classList.add('border-transparent', 'text-gray-500');
-                videoTab.classList.add('border-transparent', 'text-gray-500');
-   
-                if (currentMediaType === 'images') {
-                    photoTab.classList.add('border-green-600', 'text-green-600');
-                    photoTab.classList.remove('border-transparent', 'text-gray-500');
-                } else {
-                    videoTab.classList.add('border-green-600', 'text-green-600');
-                    videoTab.classList.remove('border-transparent', 'text-gray-500');
-                }
-   
-                // Update Video Tab Availability
+                photoTab.classList.toggle('border-green-600', currentMediaType === 'images');
+                photoTab.classList.toggle('text-green-600', currentMediaType === 'images');
+                videoTab.classList.toggle('border-green-600', currentMediaType === 'videos');
+                videoTab.classList.toggle('text-green-600', currentMediaType === 'videos');
                 const hasVideos = getAssets(currentCategory, 'videos').length > 0;
                 videoTab.disabled = !hasVideos;
                 videoTab.classList.toggle('opacity-50', !hasVideos);
@@ -559,11 +548,8 @@
                     updateControls();
                     return;
                 }
-   
                 const assetPath = currentAssets[currentAssetIndex];
-               
                 if (assetPath.toLowerCase().endsWith('.mp4')) {
-                    // Create Video Element
                     const videoEl = document.createElement('video');
                     videoEl.src = assetPath;
                     videoEl.controls = true;
@@ -572,7 +558,6 @@
                     videoEl.classList.add('w-full', 'h-full', 'object-contain', 'rounded-lg', 'shadow-xl');
                     mediaContainer.appendChild(videoEl);
                 } else {
-                    // Create Image Element
                     const imgEl = document.createElement('img');
                     imgEl.src = assetPath;
                     imgEl.alt = `${currentCategory} Media ${currentAssetIndex + 1}`;
@@ -590,14 +575,15 @@
                 currentMediaType = type;
                 currentAssets = getAssets(category, type);
                 currentAssetIndex = 0;
-                carouselModalTitle.textContent = `Media for ${category}`;
+                // Use a more generic title for the gallery
+                const title = category === "Main Gallery" ? "Our Gallery" : `Media for ${category}`;
+                carouselModalTitle.textContent = title;
                 mediaCarouselModal.classList.remove('hidden');
                 showAsset();
             };
            
             const navigate = (direction) => {
                 if (currentAssets.length === 0) return;
-               
                 const newIndex = currentAssetIndex + direction;
                 if (newIndex >= 0 && newIndex < currentAssets.length) {
                     currentAssetIndex = newIndex;
@@ -607,28 +593,26 @@
            
             // --- Event Listeners ---
            
-            // 1. Handle "Our Work" Card Clicks (Connects the HTML cards to the JS logic)
+            // GALLERY CHANGE: Added event listener for the new gallery button
+            openGalleryBtn.addEventListener('click', () => {
+                loadCarousel("Main Gallery", 'images');
+            });
+
             mediaCards.forEach(card => {
                 card.addEventListener('click', () => {
                     const categoryName = card.dataset.category;
-                    // Always start by defaulting to images
                     loadCarousel(categoryName, 'images'); 
                 });
             });
            
-            // 2. Handle Carousel Navigation
             prevBtn.addEventListener('click', () => navigate(-1));
             nextBtn.addEventListener('click', () => navigate(1));
            
-            // 3. Handle Tab Switching
             const handleTabClick = (event) => {
                 const newType = event.currentTarget.dataset.type;
                 if (newType === 'videos' && event.currentTarget.disabled) return;
-               
-                // Before loading new media type, stop any playing video
                 const currentVideo = mediaContainer.querySelector('video');
                 if (currentVideo) currentVideo.pause();
-   
                 if (newType !== currentMediaType) {
                     loadCarousel(currentCategory, newType);
                 }
@@ -637,9 +621,7 @@
             photoTab.addEventListener('click', handleTabClick);
             videoTab.addEventListener('click', handleTabClick);
            
-            // 4. Handle Carousel Modal Closing
             closeCarouselBtn.addEventListener('click', () => {
-                // Stop any playing video before closing
                 const video = mediaContainer.querySelector('video');
                 if (video) video.pause();
                 mediaCarouselModal.classList.add('hidden');
@@ -653,7 +635,6 @@
                 }
             });
 
-            // CHANGE 5: Added Event Listeners for new "Join Us" Modal
             joinUsBtn.addEventListener('click', () => {
                 joinUsModal.classList.remove('hidden');
             });
@@ -668,12 +649,10 @@
                 }
             });
            
-            // 5. Existing: Mobile Menu Toggle
             mobileMenuBtn.addEventListener('click', () => {
                 mobileMenu.classList.toggle('hidden');
             });
            
-            // 6. Existing: Donation Modal Logic
             donateBtns.forEach(btn => {
                 btn.addEventListener('click', () => {
                     donationModal.classList.remove('hidden');
@@ -695,7 +674,6 @@
                 }, 4000);
             });
            
-            // Handle quick amount buttons
             document.querySelectorAll('.amount-btn').forEach(button => {
                 button.addEventListener('click', (e) => {
                     const amount = e.currentTarget.textContent.replace('$', '');
