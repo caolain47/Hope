@@ -37,7 +37,7 @@
             background-color: #0e998e;
             border-radius: 9999px;
         }
-        .donate-modal, .gallery-modal, .media-carousel-modal {
+        .donate-modal, .gallery-modal, .media-carousel-modal, .join-us-modal {
             z-index: 1000;
         }
         /* Style for disabled media tab */
@@ -85,36 +85,36 @@
 
     <section class="w-full flex">
       <img src="images/cover1.jpg" 
-            alt="Ministry Cover" 
-            class="w-1/3 h-[75vh] object-contain cursor-pointer"
-            onclick="openHeroModal('images/cover1.jpg')">
-    
+           alt="Ministry Cover" 
+           class="w-1/3 h-[75vh] object-contain cursor-pointer"
+           onclick="openHeroModal('images/cover1.jpg')">
+   
       <img src="images/donate16.jpg" 
-            alt="Donate Dish" 
-            class="w-1/3 h-[70vh] object-contain cursor-pointer"
-            onclick="openHeroModal('images/donate16.jpg')">
-    
+           alt="Donate Dish" 
+           class="w-1/3 h-[70vh] object-contain cursor-pointer"
+           onclick="openHeroModal('images/donate16.jpg')">
+   
       <img src="images/donate14.jpg" 
-            alt="Donate Banner" 
-            class="w-1/3 h-[70vh] object-contain cursor-pointer"
-            onclick="openHeroModal('images/donate14.jpg')">
+           alt="Donate Banner" 
+           class="w-1/3 h-[70vh] object-contain cursor-pointer"
+           onclick="openHeroModal('images/donate14.jpg')">
     </section>
-    
+   
     <div id="imageModal" class="hidden fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50">
       <span class="absolute top-6 right-8 text-white text-4xl cursor-pointer" onclick="closeHeroModal()">&times;</span>
       <img id="modalImage" src="" class="max-w-full max-h-full rounded-lg shadow-lg">
     </div>
-    
+   
     <script>
       function openHeroModal(src) {
         document.getElementById('modalImage').src = src;
         document.getElementById('imageModal').classList.remove('hidden');
       }
-    
+   
       function closeHeroModal() {
         document.getElementById('imageModal').classList.add('hidden');
       }
-    
+   
       // Optional: close modal when background is clicked
       document.getElementById('imageModal').addEventListener('click', function(e) {
         if (e.target === this) {
@@ -165,12 +165,12 @@
         <h2 class="text-3xl font-bold text-center section-title mb-12 text-gray-800">Our Work</h2>
         <div class="grid md:grid-cols-3 gap-8">
 
-            <div class="group bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 text-center cursor-pointer media-card" min-h-[400px] data-category="Food and Shelter">
+            <div class="group bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 text-center cursor-pointer media-card" data-category="Food and Shelter">
                 <div class="mb-4 relative overflow-hidden rounded-lg">
                     <img src="images/FoodShelt8.jpg" 
-                            onerror="this.onerror=null;this.src='https://placehold.co/400x300/50c6a5/ffffff?text=Food+and+Shelter';" 
-                            alt="Food and Shelter" 
-                            class="w-full h-40 object-cover aspect-video transition-transform duration-500">
+                         onerror="this.onerror=null;this.src='https://placehold.co/400x300/50c6a5/ffffff?text=Food+and+Shelter';" 
+                         alt="Food and Shelter" 
+                         class="w-full h-64 object-cover transition-transform duration-500">
                     <div class="media-overlay absolute inset-0 flex items-center justify-center transition-opacity duration-300">
                         <span class="media-text text-white text-xl font-bold opacity-0 transition-opacity duration-300 uppercase tracking-widest">Media</span>
                     </div>
@@ -181,10 +181,10 @@
 
             <div class="group bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 text-center cursor-pointer media-card" data-category="Educational Support">
                 <div class="mb-4 relative overflow-hidden rounded-lg">
-                    <img src="images/children2.jpg" 
-                            onerror="this.onerror=null;this.src='https://placehold.co/400x300/50c6a5/ffffff?text=Educational+Support';" 
-                            alt="Educational Support" 
-                            class="w-full h-40 object-cover aspect-video transition-transform duration-500">
+                     <img src="images/children2.jpg" 
+                         onerror="this.onerror=null;this.src='https://placehold.co/400x300/50c6a5/ffffff?text=Educational+Support';" 
+                         alt="Educational Support" 
+                         class="w-full h-64 object-cover transition-transform duration-500">
                     <div class="media-overlay absolute inset-0 flex items-center justify-center transition-opacity duration-300">
                         <span class="media-text text-white text-xl font-bold opacity-0 transition-opacity duration-300 uppercase tracking-widest">Media</span>
                     </div>
@@ -195,10 +195,10 @@
 
             <div class="group bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 text-center cursor-pointer media-card" data-category="Catechesis and Faith Formation">
                 <div class="mb-4 relative overflow-hidden rounded-lg">
-                    <img src="images/cathec10.jpg" 
-                            onerror="this.onerror=null;this.src='https://placehold.co/400x300/50c6a5/ffffff?text=Catechesis';" 
-                            alt="Catechesis and Faith Formation" 
-                            class="w-full h-40 object-cover aspect-video transition-transform duration-500">
+                     <img src="images/cathec10.jpg" 
+                         onerror="this.onerror=null;this.src='https://placehold.co/400x300/50c6a5/ffffff?text=Catechesis';" 
+                         alt="Catechesis and Faith Formation" 
+                         class="w-full h-64 object-cover transition-transform duration-500">
                     <div class="media-overlay absolute inset-0 flex items-center justify-center transition-opacity duration-300">
                         <span class="media-text text-white text-xl font-bold opacity-0 transition-opacity duration-300 uppercase tracking-widest">Media</span>
                     </div>
@@ -211,15 +211,13 @@
     </section>
 
 
-    <!-- PEOPLE SECTION -->
     <section id="people" class="py-16 bg-white">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold text-center section-title mb-12 text-gray-800">Our People</h2>
-            <!-- Main bio -->
             <div class="max-w-4xl mx-auto bg-gray-100 p-8 rounded-xl shadow-lg mb-12">
                 <div class="md:flex md:space-x-8 items-center">
                     <div class="md:w-1/3 flex-shrink-0 mb-6 md:mb-0">
-                        <img src="workers/Naminya.jpg" alt="Photo of Naminya Ahamada" class="w-full h-auto object-cover rounded-xl shadow-md">
+                        <img src="workers/Naminya.jpg" alt="Photo of Naminya Ahamada" class="w-full h-auto object-cover rounded-xl shadow-md cursor-pointer" onclick="openHeroModal('workers/Naminya.jpg')">
                     </div>
                     <div class="md:w-2/3">
                         <h3 class="text-2xl font-bold text-gray-800 mb-2">Naminya Ahamada</h3>
@@ -234,45 +232,45 @@
                     </div>
                 </div>
             </div>
-    
+   
             <div class="text-center mb-8">
                 <h3 class="text-2xl font-bold text-gray-800">Our Volunteer Team</h3>
             </div>
             <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
                 <div class="text-center bg-gray-100 p-4 rounded-xl shadow-md">
-                    <img src="workers/Naminya.jpg" alt="Naminya Ahamada" class="w-24 h-24 rounded-full mx-auto object-cover mb-3 shadow-inner">
+                    <img src="workers/Naminya.jpg" alt="Naminya Ahamada" class="w-24 h-24 rounded-full mx-auto object-cover mb-3 shadow-inner cursor-pointer" onclick="openHeroModal('workers/Naminya.jpg')">
                     <p class="font-semibold text-gray-800">Naminya Ahamada</p>
                     <p class="text-sm text-green-600">Director</p>
                 </div>
                 <div class="text-center bg-gray-100 p-4 rounded-xl shadow-md">
-                    <img src="workers/Nakadama.jpg" alt="Nakadama Sumaya" class="w-24 h-24 rounded-full mx-auto object-cover mb-3 shadow-inner">
+                    <img src="workers/Nakadama.jpg" alt="Nakadama Sumaya" class="w-24 h-24 rounded-full mx-auto object-cover mb-3 shadow-inner cursor-pointer" onclick="openHeroModal('workers/Nakadama.jpg')">
                     <p class="font-semibold text-gray-800">Sumaya Nakadama</p>
                     <p class="text-sm text-green-600">Assistant Director</p>
                 </div>
                 <div class="text-center bg-gray-100 p-4 rounded-xl shadow-md">
-                    <img src="workers/otanga.jpg" alt="Otanga Anthony" class="w-24 h-24 rounded-full mx-auto object-cover mb-3 shadow-inner">
+                    <img src="workers/otanga.jpg" alt="Otanga Anthony" class="w-24 h-24 rounded-full mx-auto object-cover mb-3 shadow-inner cursor-pointer" onclick="openHeroModal('workers/otanga.jpg')">
                     <p class="font-semibold text-gray-800">Anthony Otanga</p>
                     <p class="text-sm text-green-600">Secretary</p>
                 </div>
                 <div class="text-center bg-gray-100 p-4 rounded-xl shadow-md">
-                    <img src="workers/kyange.jpg" alt="Kyange Samuel" class="w-24 h-24 rounded-full mx-auto object-cover mb-3 shadow-inner">
+                    <img src="workers/kyange.jpg" alt="Kyange Samuel" class="w-24 h-24 rounded-full mx-auto object-cover mb-3 shadow-inner cursor-pointer" onclick="openHeroModal('workers/kyange.jpg')">
                     <p class="font-semibold text-gray-800">Samuel Kyange</p>
                     <p class="text-sm text-green-600">Treasurer</p>
                 </div>
                 <div class="text-center bg-gray-100 p-4 rounded-xl shadow-md">
-                    <img src="workers/Namunana.jpg" alt="Namunana Sharon" class="w-24 h-24 rounded-full mx-auto object-cover mb-3 shadow-inner">
+                    <img src="workers/Namunana.jpg" alt="Namunana Sharon" class="w-24 h-24 rounded-full mx-auto object-cover mb-3 shadow-inner cursor-pointer" onclick="openHeroModal('workers/Namunana.jpg')">
                     <p class="font-semibold text-gray-800">Sharon Namunana</p>
                     <p class="text-sm text-green-600">Member</p>
                 </div>
                 <div class="text-center bg-gray-100 p-4 rounded-xl shadow-md">
-                    <img src="workers/Buwala.jpg" alt="Buwala Mayimuna" class="w-24 h-24 rounded-full mx-auto object-cover mb-3 shadow-inner">
+                    <img src="workers/Buwala.jpg" alt="Buwala Mayimuna" class="w-24 h-24 rounded-full mx-auto object-cover mb-3 shadow-inner cursor-pointer" onclick="openHeroModal('workers/Buwala.jpg')">
                     <p class="font-semibold text-gray-800">Mayimuna Buwala</p>
                     <p class="text-sm text-green-600">Member</p>
                 </div>
             </div>
         </div>
     </section>
-    
+   
     <section id="gallery" class="py-16 bg-gray-100">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold text-center section-title mb-12 text-gray-800">Our Gallery</h2>
@@ -318,7 +316,7 @@
                     </div>
                     <h3 class="text-2xl font-bold text-gray-800 mb-2">Become a Volunteer</h3>
                     <p class="text-gray-600 mb-6">Lend a hand and be the change you wish to see. Our volunteers are the backbone of our organization.</p>
-                    <button class="bg-green-600 text-white px-8 py-3 rounded-full font-bold hover:bg-green-700 transition duration-300 btn-primary shadow-lg">
+                    <button id="join-us-btn" class="bg-green-600 text-white px-8 py-3 rounded-full font-bold hover:bg-green-700 transition duration-300 btn-primary shadow-lg">
                         Join Us
                     </button>
                 </div>
@@ -334,14 +332,13 @@
                     <span class="text-xl font-bold text-white">Hope of a New Life Ministry</span>
                 </a>
                 <p class="text-gray-400 text-sm">Empowering communities through compassionate care and spiritual guidance.</p>
+                <h4 class="text-lg font-semibold text-white mb-2 pt-2">Contact Us</h4>
                 <div class="flex justify-center md:justify-start space-x-4">
-                <!-- Instagram Icon (Material UI, bigger size) -->
-                    <a href="https://www.instagram.com/hopeofanewlife?utm_source=qr&igsh=YW8zamIzNXg0aDlm" target="_blank" class="text-gray-400 hover:text-white transition duration-300" aria-label="Instagram">
+                <a href="https://www.instagram.com/hopeofanewlife?utm_source=qr&igsh=YW8zamIzNXg0aDlm" target="_blank" class="text-gray-400 hover:text-white transition duration-300" aria-label="Instagram">
                       <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M7.75 2h8.5C19.55 2 22 4.45 22 7.75v8.5c0 3.3-2.45 5.75-5.75 5.75h-8.5C4.45 22 2 19.55 2 16.25v-8.5C2 4.45 4.45 2 7.75 2zm0 2C5.68 4 4 5.68 4 7.75v8.5C4 18.32 5.68 20 7.75 20h8.5c2.07 0 3.75-1.68 3.75-3.75v-8.5C20 5.68 18.32 4 16.25 4h-8.5zm4.25 3a5.25 5.25 0 110 10.5A5.25 5.25 0 0112 7zm0 2a3.25 3.25 0 100 6.5A3.25 3.25 0 0012 9zm5.5.25a1 1 0 110 2 1 1 0 010-2z"/>
                       </svg>
                     </a>
-                    <!-- WhatsApp Icon (Material UI, bigger size) -->
                     <a href="https://wa.me/256760260017" target="_blank" class="text-gray-400 hover:text-white transition duration-300" aria-label="WhatsApp">
                       <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M16.7 13.1c-.2-.1-1.1-.6-1.3-.7-.2-.1-.4-.1-.5.1-.2.2-.5.7-.7.8-.1.2-.3.2-.5.1-.2-.1-.8-.3-1.5-.9-.5-.4-.9-1-1-1.2-.1-.2 0-.4.1-.5.1-.1.3-.4.4-.6.1-.1.1-.2.2-.4s0-.3-.1-.5c-.1-.1-.5-1.2-.7-1.6-.2-.5-.4-.4-.6-.4-.1 0-.3 0-.5 0-.2 0-.5.1-.7.4-.2.2-.8.7-.8 1.7 0 1 .7 2 1.3 2.7 1.6 1.6 3.2 2.1 4.4 2.1.5 0 .9-.1 1.2-.2.4-.2 1.1-.5 1.3-.9.2-.4.2-.9.1-1-.1-.1-.2-.2-.4-.3zM12 2C6.5 2 2 6.5 2 12c0 1.6.4 3.2 1.2 4.6L2 22l5.5-1.4C9.3 21 10.7 21.3 12 21.3c5.5 0 10-4.5 10-9.9C22 6.5 17.5 2 12 2z"/>
@@ -363,7 +360,7 @@
             </div>
 
             <div class="space-y-4">
-                <h4 class="text-lg font-semibold text-white mb-2">Contact Us</h4>
+                <h4 class="text-lg font-semibold text-white mb-2">Address</h4>
                 <div class="space-y-2 text-gray-400 text-sm">
                     <p class="font-bold text-white">Hope of a New Life Ministry, Uganda 🇺🇬</p>
                     <p>L.C 1 : BUTAKANIRA</p>
@@ -422,24 +419,24 @@
             <img id="modal-image" src="" alt="Full-screen gallery image" class="rounded-xl max-w-full max-h-full">
         </div>
     </div>
-    
+   
     <div id="media-carousel-modal" class="media-carousel-modal fixed inset-0 bg-gray-900 bg-opacity-90 hidden flex items-center justify-center p-4">
         <div class="bg-white p-6 rounded-xl shadow-2xl max-w-4xl w-full h-[90vh] flex flex-col relative">
-            
+           
             <button id="close-carousel-btn" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 transition duration-300 z-10">
                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>
 
             <h3 id="carousel-modal-title" class="text-2xl font-bold text-gray-800 text-center mb-4 pt-2">Media</h3>
-            
+           
             <div class="flex justify-center space-x-4 border-b pb-2 mb-4">
                 <button id="photo-tab" data-type="images" class="font-semibold pb-2 border-b-2 transition duration-300 text-green-600 border-green-600">Photos</button>
                 <button id="video-tab" data-type="videos" class="font-semibold pb-2 border-b-2 transition duration-300 text-gray-500 border-transparent">Videos</button>
             </div>
-            
+           
             <div id="media-container" class="flex-grow flex items-center justify-center overflow-hidden bg-gray-100 rounded-lg relative">
                 </div>
-            
+           
             <div class="flex justify-between items-center mt-4">
                 <button id="prev-btn" class="bg-green-600 text-white p-3 rounded-full hover:bg-green-700 disabled:bg-gray-400 transition duration-300">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
@@ -449,7 +446,28 @@
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                 </button>
             </div>
-            
+           
+        </div>
+    </div>
+
+    <div id="join-us-modal" class="join-us-modal fixed inset-0 bg-black bg-opacity-75 hidden flex items-center justify-center p-4">
+        <div class="bg-white p-8 rounded-xl shadow-2xl max-w-md w-full relative text-center">
+            <button id="close-join-us-modal-btn" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 transition duration-300">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            <h3 class="text-2xl font-bold text-gray-800 mb-6">Contact Us</h3>
+            <div class="flex justify-center items-center space-x-8">
+                <a href="https://www.instagram.com/hopeofanewlife?utm_source=qr&igsh=YW8zamIzNXg0aDlm" target="_blank" class="text-gray-600 hover:text-green-600 transition duration-300" aria-label="Instagram">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-24 h-24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M7.75 2h8.5C19.55 2 22 4.45 22 7.75v8.5c0 3.3-2.45 5.75-5.75 5.75h-8.5C4.45 22 2 19.55 2 16.25v-8.5C2 4.45 4.45 2 7.75 2zm0 2C5.68 4 4 5.68 4 7.75v8.5C4 18.32 5.68 20 7.75 20h8.5c2.07 0 3.75-1.68 3.75-3.75v-8.5C20 5.68 18.32 4 16.25 4h-8.5zm4.25 3a5.25 5.25 0 110 10.5A5.25 5.25 0 0112 7zm0 2a3.25 3.25 0 100 6.5A3.25 3.25 0 0012 9zm5.5.25a1 1 0 110 2 1 1 0 010-2z"/>
+                  </svg>
+                </a>
+                <a href="https://wa.me/256760260017" target="_blank" class="text-gray-600 hover:text-green-600 transition duration-300" aria-label="WhatsApp">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-24 h-24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M16.7 13.1c-.2-.1-1.1-.6-1.3-.7-.2-.1-.4-.1-.5.1-.2.2-.5.7-.7.8-.1.2-.3.2-.5.1-.2-.1-.8-.3-1.5-.9-.5-.4-.9-1-1-1.2-.1-.2 0-.4.1-.5.1-.1.3-.4.4-.6.1-.1.1-.2.2-.4s0-.3-.1-.5c-.1-.1-.5-1.2-.7-1.6-.2-.5-.4-.4-.6-.4-.1 0-.3 0-.5 0-.2 0-.5.1-.7.4-.2.2-.8.7-.8 1.7 0 1 .7 2 1.3 2.7 1.6 1.6 3.2 2.1 4.4 2.1.5 0 .9-.1 1.2-.2.4-.2 1.1-.5 1.3-.9.2-.4.2-.9.1-1-.1-.1-.2-.2-.4-.3zM12 2C6.5 2 2 6.5 2 12c0 1.6.4 3.2 1.2 4.6L2 22l5.5-1.4C9.3 21 10.7 21.3 12 21.3c5.5 0 10-4.5 10-9.9C22 6.5 17.5 2 12 2z"/>
+                  </svg>
+                </a>
+            </div>
         </div>
     </div>
 
@@ -465,7 +483,7 @@
             const donationForm = document.getElementById('donation-form');
             const donationMessage = document.getElementById('donation-message');
             const mediaCards = document.querySelectorAll('.media-card'); // Our work cards
-    
+   
             // New Carousel Element Selectors
             const mediaCarouselModal = document.getElementById('media-carousel-modal');
             const closeCarouselBtn = document.getElementById('close-carousel-btn');
@@ -476,7 +494,12 @@
             const prevBtn = document.getElementById('prev-btn');
             const nextBtn = document.getElementById('next-btn');
             const assetCounter = document.getElementById('asset-counter');
-            
+
+            // CHANGE 5: New "Join Us" Modal Selectors
+            const joinUsBtn = document.getElementById('join-us-btn');
+            const joinUsModal = document.getElementById('join-us-modal');
+            const closeJoinUsModalBtn = document.getElementById('close-join-us-modal-btn');
+           
             // --- Media Data Configuration ---
             const mediaData = {
                 "Catechesis and Faith Formation": {
@@ -492,39 +515,39 @@
                     videos: ['education/v1.mp4', 'education/v2.mp4', 'education/v3.mp4']
                 }
             };
-            
+           
             // --- Carousel State Management ---
             let currentCategory = '';
             let currentMediaType = 'images';
             let currentAssetIndex = 0;
             let currentAssets = [];
-            
+           
             // --- Core Carousel Functions ---
-            
+           
             const getAssets = (category, type) => {
                 return mediaData[category] ? mediaData[category][type] : [];
             };
-            
+           
             const updateControls = () => {
                 const total = currentAssets.length;
-                
+               
                 // Update Asset Counter
                 if (total === 0) {
                     assetCounter.textContent = 'No media available.';
                 } else {
                     assetCounter.textContent = `${currentAssetIndex + 1} of ${total}`;
                 }
-    
+   
                 // Update Navigation Buttons (disabled state)
                 prevBtn.disabled = currentAssetIndex === 0 || total === 0;
                 nextBtn.disabled = currentAssetIndex === total - 1 || total === 0;
-    
+   
                 // Update Tab Colors
                 photoTab.classList.remove('border-green-600', 'text-green-600');
                 videoTab.classList.remove('border-green-600', 'text-green-600');
                 photoTab.classList.add('border-transparent', 'text-gray-500');
                 videoTab.classList.add('border-transparent', 'text-gray-500');
-    
+   
                 if (currentMediaType === 'images') {
                     photoTab.classList.add('border-green-600', 'text-green-600');
                     photoTab.classList.remove('border-transparent', 'text-gray-500');
@@ -532,14 +555,14 @@
                     videoTab.classList.add('border-green-600', 'text-green-600');
                     videoTab.classList.remove('border-transparent', 'text-gray-500');
                 }
-    
+   
                 // Update Video Tab Availability
                 const hasVideos = getAssets(currentCategory, 'videos').length > 0;
                 videoTab.disabled = !hasVideos;
                 videoTab.classList.toggle('opacity-50', !hasVideos);
                 videoTab.classList.toggle('cursor-not-allowed', !hasVideos);
             };
-            
+           
             const showAsset = () => {
                 mediaContainer.innerHTML = '';
                 if (currentAssets.length === 0) {
@@ -547,9 +570,9 @@
                     updateControls();
                     return;
                 }
-    
+   
                 const assetPath = currentAssets[currentAssetIndex];
-                
+               
                 if (assetPath.toLowerCase().endsWith('.mp4')) {
                     // Create Video Element
                     const videoEl = document.createElement('video');
@@ -572,7 +595,7 @@
                 }
                 updateControls();
             };
-            
+           
             const loadCarousel = (category, type) => {
                 currentCategory = category;
                 currentMediaType = type;
@@ -582,19 +605,19 @@
                 mediaCarouselModal.classList.remove('hidden');
                 showAsset();
             };
-            
+           
             const navigate = (direction) => {
                 if (currentAssets.length === 0) return;
-                
+               
                 const newIndex = currentAssetIndex + direction;
                 if (newIndex >= 0 && newIndex < currentAssets.length) {
                     currentAssetIndex = newIndex;
                     showAsset();
                 }
             };
-            
+           
             // --- Event Listeners ---
-            
+           
             // 1. Handle "Our Work" Card Clicks (Connects the HTML cards to the JS logic)
             mediaCards.forEach(card => {
                 card.addEventListener('click', () => {
@@ -603,28 +626,28 @@
                     loadCarousel(categoryName, 'images'); 
                 });
             });
-            
+           
             // 2. Handle Carousel Navigation
             prevBtn.addEventListener('click', () => navigate(-1));
             nextBtn.addEventListener('click', () => navigate(1));
-            
+           
             // 3. Handle Tab Switching
             const handleTabClick = (event) => {
                 const newType = event.currentTarget.dataset.type;
                 if (newType === 'videos' && event.currentTarget.disabled) return;
-                
+               
                 // Before loading new media type, stop any playing video
                 const currentVideo = mediaContainer.querySelector('video');
                 if (currentVideo) currentVideo.pause();
-    
+   
                 if (newType !== currentMediaType) {
                     loadCarousel(currentCategory, newType);
                 }
             };
-            
+           
             photoTab.addEventListener('click', handleTabClick);
             videoTab.addEventListener('click', handleTabClick);
-            
+           
             // 4. Handle Carousel Modal Closing
             closeCarouselBtn.addEventListener('click', () => {
                 // Stop any playing video before closing
@@ -632,7 +655,7 @@
                 if (video) video.pause();
                 mediaCarouselModal.classList.add('hidden');
             });
-            
+           
             window.addEventListener('click', (event) => {
                 if (event.target === mediaCarouselModal) {
                     const video = mediaContainer.querySelector('video');
@@ -640,23 +663,38 @@
                     mediaCarouselModal.classList.add('hidden');
                 }
             });
-            
+
+            // CHANGE 5: Added Event Listeners for new "Join Us" Modal
+            joinUsBtn.addEventListener('click', () => {
+                joinUsModal.classList.remove('hidden');
+            });
+
+            closeJoinUsModalBtn.addEventListener('click', () => {
+                joinUsModal.classList.add('hidden');
+            });
+
+            joinUsModal.addEventListener('click', (event) => {
+                if(event.target === joinUsModal) {
+                    joinUsModal.classList.add('hidden');
+                }
+            });
+           
             // 5. Existing: Mobile Menu Toggle
             mobileMenuBtn.addEventListener('click', () => {
                 mobileMenu.classList.toggle('hidden');
             });
-            
+           
             // 6. Existing: Donation Modal Logic
             donateBtns.forEach(btn => {
                 btn.addEventListener('click', () => {
                     donationModal.classList.remove('hidden');
                 });
             });
-            
+           
             closeModalBtn.addEventListener('click', () => {
                 donationModal.classList.add('hidden');
             });
-            
+           
             donationForm.addEventListener('submit', (event) => {
                 event.preventDefault();
                 donationMessage.textContent = `Thank you! Your donation has been received.`;
@@ -667,7 +705,7 @@
                     donationMessage.classList.add('hidden');
                 }, 4000);
             });
-            
+           
             // Handle quick amount buttons
             document.querySelectorAll('.amount-btn').forEach(button => {
                 button.addEventListener('click', (e) => {
@@ -675,7 +713,7 @@
                     document.getElementById('custom-amount').value = amount;
                 });
             });
-            
+           
         });
     </script>
     </body>
